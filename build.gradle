@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.obvilion.json'
+version '1.0'
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
